@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Open Source | Young (Dung) Truong</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+  <!-- ====== Header ====== -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="site-name">Young <span class="accent">Truong</span></a>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html">About</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="publications.html">Publications</a></li>
+          <li><a href="opensource.html" class="active">Open Source</a></li>
+        </ul>
+      </nav>
+      <div class="nav-icons">
+        <a href="https://scholar.google.com/citations?user=PssCV58AAAAJ&hl=en" target="_blank" title="Google Scholar"><i class="fa-brands fa-google-scholar"></i></a>
+        <a href="https://github.com" target="_blank" title="GitHub"><i class="fa-brands fa-github"></i></a>
+        <a href="https://linkedin.com" target="_blank" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+        <a href="https://twitter.com" target="_blank" title="X / Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+        <button class="theme-toggle" onclick="toggleTheme()" title="Toggle dark mode">
+          <i class="fa-solid fa-moon" id="theme-icon"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ====== Main ====== -->
+  <main class="wide">
+
+    <h1 class="section-title" style="font-size:1.8rem; border-bottom:none; margin-bottom:0.5rem;">Open Source</h1>
+    <p style="color:var(--text-muted); margin-bottom:2rem;">
+      I build and contribute to open-source tools and platforms that power neuroscience research worldwide.
+      From web-based data portals to signal processing toolkits, my work focuses on making EEG research infrastructure
+      scalable, accessible, and FAIR-compliant.
+    </p>
+
+    <div class="project-grid">
+
+      <!-- ===== NEMAR — Highlight ===== -->
+      <div class="project-card highlight">
+        <div class="project-icon" style="background: linear-gradient(135deg, #2980b9, #3498db);">
+          <i class="fa-solid fa-cloud"></i>
+        </div>
+        <div class="project-content">
+          <span class="project-role">Core Developer &amp; Infrastructure Lead</span>
+          <h3><a href="https://nemar.org" target="_blank">NEMAR</a></h3>
+          <a href="https://nemar.org" class="project-url" target="_blank">nemar.org</a>
+          <p>
+            The Neuroelectromagnetic Data Archive and Repository — an open-access platform for archiving, sharing,
+            and processing neuroelectromagnetic data at scale. NEMAR provides a web interface for data exploration,
+            automated BIDS validation, cloud-based EEG processing pipelines via the Neuroscience Gateway (NSG),
+            and integration with OpenNeuro for long-term archival. I designed and built the full-stack web application,
+            data ingestion pipelines, and HPC compute integration that serve the neuroscience community.
+          </p>
+          <div class="project-tech">
+            <span class="tag">Python</span>
+            <span class="tag">MATLAB</span>
+            <span class="tag">PHP</span>
+            <span class="tag">JavaScript</span>
+            <span class="tag">HPC</span>
+            <span class="tag">BIDS</span>
+            <span class="tag">REST API</span>
+          </div>
+          <div class="project-links">
+            <a href="https://nemar.org" target="_blank"><i class="fa-solid fa-globe"></i> Live Site</a>
+            <a href="#" target="_blank"><i class="fa-brands fa-github"></i> GitHub</a>
+            <a href="#" target="_blank"><i class="fa-solid fa-file-pdf"></i> Paper (Database, 2022)</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== EEGDash ===== -->
+      <div class="project-card">
+        <div class="project-icon" style="background: linear-gradient(135deg, #27ae60, #2ecc71);">
+          <i class="fa-solid fa-gauge-high"></i>
+        </div>
+        <span class="project-role">Creator &amp; Lead Developer</span>
+        <h3><a href="https://eegdash.org" target="_blank">EEGDash</a></h3>
+        <a href="https://eegdash.org" class="project-url" target="_blank">eegdash.org</a>
+        <p>
+          An interactive web dashboard for real-time EEG data exploration, quality assessment, and visualization.
+          EEGDash provides researchers with an intuitive browser-based interface to inspect EEG recordings,
+          view channel topographies, and assess data quality metrics — no MATLAB or Python installation required.
+        </p>
+        <div class="project-tech">
+          <span class="tag">JavaScript</span>
+          <span class="tag">Python</span>
+          <span class="tag">WebGL</span>
+          <span class="tag">EEG</span>
+        </div>
+        <div class="project-links">
+          <a href="https://eegdash.org" target="_blank"><i class="fa-solid fa-globe"></i> Live Site</a>
+          <a href="#" target="_blank"><i class="fa-brands fa-github"></i> GitHub</a>
+        </div>
+      </div>
+
+      <!-- ===== Braindecode ===== -->
+      <div class="project-card">
+        <div class="project-icon" style="background: linear-gradient(135deg, #8e44ad, #9b59b6);">
+          <i class="fa-solid fa-brain"></i>
+        </div>
+        <span class="project-role">Contributor</span>
+        <h3><a href="https://braindecode.org" target="_blank">Braindecode</a></h3>
+        <a href="https://braindecode.org" class="project-url" target="_blank">braindecode.org</a>
+        <p>
+          An open-source Python library for EEG deep learning built on PyTorch and compatible with MNE-Python.
+          Braindecode provides state-of-the-art deep learning architectures for EEG decoding (EEGNet, ShallowNet,
+          Deep4Net, etc.), along with data loading utilities for common BCI and neuroscience datasets.
+          I contribute to expanding its model zoo, self-supervised learning features, and dataset integrations.
+        </p>
+        <div class="project-tech">
+          <span class="tag">Python</span>
+          <span class="tag">PyTorch</span>
+          <span class="tag">MNE-Python</span>
+          <span class="tag">Deep Learning</span>
+        </div>
+        <div class="project-links">
+          <a href="https://braindecode.org" target="_blank"><i class="fa-solid fa-globe"></i> Docs</a>
+          <a href="https://github.com/braindecode/braindecode" target="_blank"><i class="fa-brands fa-github"></i> GitHub</a>
+        </div>
+      </div>
+
+      <!-- ===== EEGLAB ===== -->
+      <div class="project-card">
+        <div class="project-icon" style="background: linear-gradient(135deg, #e67e22, #f39c12);">
+          <i class="fa-solid fa-wave-square"></i>
+        </div>
+        <span class="project-role">Developer &amp; Maintainer</span>
+        <h3><a href="https://eeglab.org" target="_blank">EEGLAB</a></h3>
+        <a href="https://eeglab.org" class="project-url" target="_blank">eeglab.org</a>
+        <p>
+          One of the most widely used open-source toolboxes for EEG signal processing, used by over 100,000 researchers
+          worldwide. EEGLAB provides functions for data import, artifact rejection, ICA decomposition, time-frequency analysis,
+          and statistical testing. I contribute to the EEGLAB ecosystem including the HPC portal interface, BIDS-EEG integration,
+          HED annotation tools, and the Python bridge (ICLabel in Python).
+        </p>
+        <div class="project-tech">
+          <span class="tag">MATLAB</span>
+          <span class="tag">Python</span>
+          <span class="tag">Signal Processing</span>
+          <span class="tag">ICA</span>
+        </div>
+        <div class="project-links">
+          <a href="https://eeglab.org" target="_blank"><i class="fa-solid fa-globe"></i> Website</a>
+          <a href="https://github.com/sccn/eeglab" target="_blank"><i class="fa-brands fa-github"></i> GitHub</a>
+        </div>
+      </div>
+
+      <!-- ===== NeurIPS Challenge ===== -->
+      <div class="project-card">
+        <div class="project-icon" style="background: linear-gradient(135deg, #c0392b, #e74c3c);">
+          <i class="fa-solid fa-trophy"></i>
+        </div>
+        <span class="project-role">Co-Organizer</span>
+        <h3><a href="https://eeg2025.github.io/" target="_blank">NeurIPS 2025 EEG Foundation Challenge</a></h3>
+        <a href="https://eeg2025.github.io/" class="project-url" target="_blank">eeg2025.github.io</a>
+        <p>
+          Co-organized the EEG Foundation Challenge accepted to the NeurIPS 2025 Competition Track.
+          The challenge addressed cross-task transfer learning and subject-invariant representation
+          in EEG decoding, using the large-scale HBN-EEG dataset (3,000+ participants, 6 cognitive tasks).
+          Built the challenge infrastructure including data distribution, evaluation pipelines, and leaderboard.
+        </p>
+        <div class="project-tech">
+          <span class="tag">Python</span>
+          <span class="tag">Competition</span>
+          <span class="tag">NeurIPS 2025</span>
+          <span class="tag">HBN-EEG</span>
+        </div>
+        <div class="project-links">
+          <a href="https://eeg2025.github.io/" target="_blank"><i class="fa-solid fa-globe"></i> Challenge Site</a>
+          <a href="https://arxiv.org/abs/2506.19141" target="_blank"><i class="fa-solid fa-link"></i> arXiv</a>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Infrastructure Philosophy -->
+    <section class="mt-2">
+      <h2 class="section-title">Infrastructure Philosophy</h2>
+      <p>
+        I believe that great neuroscience research requires great infrastructure. My open-source work focuses
+        on closing the gap between raw EEG data and scientific insight — building web platforms for data
+        management (NEMAR), interactive exploration tools (EEGDash), standardized processing pipelines (EEGLAB + BIDS),
+        and deep learning toolkits (Braindecode) that make it possible for any researcher to work with
+        large-scale EEG datasets without reinventing the wheel.
+      </p>
+      <p>
+        I work across the full stack: from HPC job scheduling and cloud compute orchestration to frontend
+        visualization and REST API design. I am particularly passionate about FAIR data principles and
+        building systems that make neuroscience data findable, accessible, interoperable, and reusable.
+      </p>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; 2026 Young (Dung) Truong &middot; Built with care.</p>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

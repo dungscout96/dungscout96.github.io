@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>A Practical Guide to Cross-Validation | Young (Dung) Truong</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <!-- KaTeX for math rendering -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css">
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.js"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/contrib/auto-render.min.js"
+    onload="renderMathInElement(document.body, {delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}]});">
+  </script>
+</head>
+<body>
+
+  <!-- ====== Header ====== -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="../index.html" class="site-name">Young <span class="accent">Truong</span></a>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="../index.html">About</a></li>
+          <li><a href="../blog.html" class="active">Blog</a></li>
+          <li><a href="../publications.html">Publications</a></li>
+          <li><a href="../opensource.html">Open Source</a></li>
+        </ul>
+      </nav>
+      <div class="nav-icons">
+        <a href="https://scholar.google.com/citations?user=PssCV58AAAAJ&hl=en" target="_blank" title="Google Scholar"><i class="fa-brands fa-google-scholar"></i></a>
+        <a href="https://github.com" target="_blank" title="GitHub"><i class="fa-brands fa-github"></i></a>
+        <a href="https://linkedin.com" target="_blank" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+        <a href="https://twitter.com" target="_blank" title="X / Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+        <button class="theme-toggle" onclick="toggleTheme()" title="Toggle dark mode">
+          <i class="fa-solid fa-moon" id="theme-icon"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ====== Main ====== -->
+  <main>
+
+    <div class="post-header">
+      <h1>A Practical Guide to Cross-Validation for Model Selection</h1>
+      <div class="post-meta">
+        <span><i class="fa-regular fa-calendar"></i> March 10, 2026</span> &middot;
+        <span><i class="fa-regular fa-clock"></i> 12 min read</span> &middot;
+        <span class="tag" style="vertical-align: middle;">Machine Learning</span>
+        <span class="tag" style="vertical-align: middle;">Tutorial</span>
+      </div>
+    </div>
+
+    <!-- Table of Contents -->
+    <div class="toc">
+      <div class="toc-title">Contents</div>
+      <ul>
+        <li><a href="#introduction">Introduction</a></li>
+        <li><a href="#holdout">The Holdout Method</a></li>
+        <li><a href="#kfold">K-Fold Cross-Validation</a>
+          <ul>
+            <li><a href="#stratified">Stratified K-Fold</a></li>
+          </ul>
+        </li>
+        <li><a href="#code">Implementation in Python</a></li>
+        <li><a href="#pitfalls">Common Pitfalls</a></li>
+        <li><a href="#conclusion">Conclusion</a></li>
+      </ul>
+    </div>
+
+    <article class="post-body">
+
+      <h2 id="introduction">Introduction</h2>
+      <p>
+        Model evaluation is arguably the most critical step in any machine learning workflow.
+        A model that performs well on training data but fails to generalize is of little use.
+        Cross-validation provides a principled framework for estimating how well a model will
+        perform on unseen data, and it plays a central role in model selection — choosing between
+        competing algorithms or hyperparameter configurations.
+      </p>
+      <p>
+        In this post, I'll walk through the most common cross-validation strategies, starting
+        from the basic holdout method and building up to k-fold cross-validation. Along the way,
+        we'll discuss the trade-offs involved and look at practical Python implementations.
+      </p>
+
+      <h2 id="holdout">The Holdout Method</h2>
+      <p>
+        The simplest approach to model evaluation is the <strong>holdout method</strong>: split
+        your dataset into a training set and a test set, train on the former, evaluate on the
+        latter. A typical split might allocate 70% of samples for training and 30% for testing.
+      </p>
+      <p>
+        The holdout method has an obvious limitation: the performance estimate depends heavily on
+        which samples end up in the training vs. test set. With small datasets, this variance can
+        be substantial. The estimated performance might be overly optimistic or pessimistic
+        depending on the random split.
+      </p>
+
+      <blockquote>
+        The key insight behind cross-validation is that we can reduce this variance by repeating
+        the evaluation across multiple splits and averaging the results.
+      </blockquote>
+
+      <h2 id="kfold">K-Fold Cross-Validation</h2>
+      <p>
+        In <strong>k-fold cross-validation</strong>, we partition the dataset into $k$ equally-sized
+        folds. We then perform $k$ rounds of training and evaluation: in each round, one fold is
+        held out as the validation set while the remaining $k-1$ folds are used for training. The
+        overall performance estimate is the average across all $k$ rounds:
+      </p>
+
+      <div class="math-block">
+        $$\text{CV}_k = \frac{1}{k} \sum_{i=1}^{k} \mathcal{L}(f^{(i)}, D_i^{\text{val}})$$
+      </div>
+
+      <p>
+        where $f^{(i)}$ is the model trained on all folds except fold $i$, $D_i^{\text{val}}$ is
+        the $i$-th validation fold, and $\mathcal{L}$ is the evaluation metric (e.g., accuracy,
+        RMSE, F1 score).
+      </p>
+
+      <p>
+        Common choices for $k$ are 5 and 10. Smaller $k$ means less computation but higher bias
+        (smaller training sets); larger $k$ means lower bias but higher variance and more compute.
+        In practice, $k = 5$ or $k = 10$ provide a good balance.
+      </p>
+
+      <!-- SVG diagram -->
+      <div style="text-align:center; margin: 2rem 0;">
+        <svg viewBox="0 0 600 280" style="max-width:520px; width:100%;" xmlns="http://www.w3.org/2000/svg">
+          <style>
+            .fold-val { fill: #c0392b; }
+            .fold-train { fill: #ddd; stroke: #bbb; stroke-width: 1; }
+            .fold-label { font-family: Inter, sans-serif; font-size: 13px; fill: #555; }
+            .fold-title { font-family: Inter, sans-serif; font-size: 14px; fill: #333; font-weight: 600; }
+            .arrow { fill: none; stroke: #888; stroke-width: 1.5; marker-end: url(#arrowhead); }
+          </style>
+          <defs>
+            <marker id="arrowhead" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+              <polygon points="0 0, 8 3, 0 6" fill="#888"/>
+            </marker>
+          </defs>
+
+          <text x="45" y="25" class="fold-title">5-Fold Cross-Validation</text>
+
+          <!-- Header -->
+          <text x="130" y="55" class="fold-label" text-anchor="middle">Fold 1</text>
+          <text x="210" y="55" class="fold-label" text-anchor="middle">Fold 2</text>
+          <text x="290" y="55" class="fold-label" text-anchor="middle">Fold 3</text>
+          <text x="370" y="55" class="fold-label" text-anchor="middle">Fold 4</text>
+          <text x="450" y="55" class="fold-label" text-anchor="middle">Fold 5</text>
+
+          <!-- Round 1 -->
+          <text x="55" y="82" class="fold-label">Iter 1</text>
+          <rect x="90" y="66" width="80" height="24" rx="3" class="fold-val"/>
+          <rect x="170" y="66" width="80" height="24" rx="3" class="fold-train"/>
+          <rect x="250" y="66" width="80" height="24" rx="3" class="fold-train"/>
+          <rect x="330" y="66" width="80" height="24" rx="3" class="fold-train"/>
+          <rect x="410" y="66" width="80" height="24" rx="3" class="fold-train"/>
+          <line x1="500" y1="78" x2="535" y2="78" class="arrow"/>
+          <text x="545" y="82" class="fold-label">Score₁</text>
+
+          <!-- Round 2 -->
+          <text x="55" y="122" class="fold-label">Iter 2</text>
+          <rect x="90" y="106" width="80" height="24" rx="3" class="fold-train"/>
+          <rect x="170" y="106" width="80" height="24" rx="3" class="fold-val"/>
+          <rect x="250" y="106" width="80" height="24" rx="3" class="fold-train"/>
+          <rect x="330" y="106" width="80" height="24" rx="3" class="fold-train"/>
+          <rect x="410" y="106" width="80" height="24" rx="3" class="fold-train"/>
+          <line x1="500" y1="118" x2="535" y2="118" class="arrow"/>
+          <text x="545" y="122" class="fold-label">Score₂</text>
+
+          <!-- Round 3 -->
+          <text x="55" y="162" class="fold-label">Iter 3</text>
+          <rect x="90" y="146" width="80" height="24" rx="3" class="fold-train"/>
+          <rect x="170" y="146" width="80" height="24" rx="3" class="fold-train"/>
+          <rect x="250" y="146" width="80" height="24" rx="3" class="fold-val"/>
+          <rect x="330" y="146" width="80" height="24" rx="3" class="fold-train"/>
+          <rect x="410" y="146" width="80" height="24" rx="3" class="fold-train"/>
+          <line x1="500" y1="158" x2="535" y2="158" class="arrow"/>
+          <text x="545" y="162" class="fold-label">Score₃</text>
+
+          <!-- Round 4 -->
+          <text x="55" y="202" class="fold-label">Iter 4</text>
+          <rect x="90" y="186" width="80" height="24" rx="3" class="fold-train"/>
+          <rect x="170" y="186" width="80" height="24" rx="3" class="fold-train"/>
+          <rect x="250" y="186" width="80" height="24" rx="3" class="fold-train"/>
+          <rect x="330" y="186" width="80" height="24" rx="3" class="fold-val"/>
+          <rect x="410" y="186" width="80" height="24" rx="3" class="fold-train"/>
+          <line x1="500" y1="198" x2="535" y2="198" class="arrow"/>
+          <text x="545" y="202" class="fold-label">Score₄</text>
+
+          <!-- Round 5 -->
+          <text x="55" y="242" class="fold-label">Iter 5</text>
+          <rect x="90" y="226" width="80" height="24" rx="3" class="fold-train"/>
+          <rect x="170" y="226" width="80" height="24" rx="3" class="fold-train"/>
+          <rect x="250" y="226" width="80" height="24" rx="3" class="fold-train"/>
+          <rect x="330" y="226" width="80" height="24" rx="3" class="fold-train"/>
+          <rect x="410" y="226" width="80" height="24" rx="3" class="fold-val"/>
+          <line x1="500" y1="238" x2="535" y2="238" class="arrow"/>
+          <text x="545" y="242" class="fold-label">Score₅</text>
+
+          <!-- Legend -->
+          <rect x="180" y="265" width="14" height="10" rx="2" class="fold-val"/>
+          <text x="200" y="274" class="fold-label">Validation</text>
+          <rect x="280" y="265" width="14" height="10" rx="2" class="fold-train"/>
+          <text x="300" y="274" class="fold-label">Training</text>
+        </svg>
+      </div>
+
+      <h3 id="stratified">Stratified K-Fold</h3>
+      <p>
+        For classification tasks, standard k-fold can produce folds with imbalanced class distributions,
+        especially with small datasets. <strong>Stratified k-fold</strong> addresses this by ensuring
+        each fold maintains approximately the same class proportions as the original dataset. This is
+        generally recommended as the default for classification problems.
+      </p>
+
+      <h2 id="code">Implementation in Python</h2>
+      <p>
+        Scikit-learn provides convenient implementations of all common cross-validation strategies.
+        Here's a minimal example using stratified 5-fold CV:
+      </p>
+
+<pre><code>import numpy as np
+from sklearn.model_selection import StratifiedKFold, cross_val_score
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.datasets import load_iris
+
+# Load data
+X, y = load_iris(return_X_y=True)
+
+# Define model and CV strategy
+model = RandomForestClassifier(n_estimators=100, random_state=42)
+cv = StratifiedKFold(n_splits=5, shuffle=True, random_state=42)
+
+# Run cross-validation
+scores = cross_val_score(model, X, y, cv=cv, scoring='accuracy')
+
+print(f"Fold scores: {scores}")
+print(f"Mean accuracy: {scores.mean():.4f} (+/- {scores.std():.4f})")
+</code></pre>
+
+      <p>
+        The output will look something like:
+      </p>
+
+<pre><code>Fold scores: [0.9667 0.9667 0.9333 0.9667 1.0000]
+Mean accuracy: 0.9667 (+/- 0.0211)
+</code></pre>
+
+      <p>
+        The standard deviation across folds gives you a sense of the variance in your estimate —
+        large variance suggests the model is sensitive to the particular train/test split.
+      </p>
+
+      <h2 id="pitfalls">Common Pitfalls</h2>
+
+      <p>
+        <strong>Data leakage through preprocessing.</strong> If you normalize or standardize your
+        features <em>before</em> splitting into folds, information from the validation fold leaks
+        into the training process. Always fit your preprocessor on the training folds only and
+        transform the validation fold using those parameters. Scikit-learn's <code>Pipeline</code>
+        handles this correctly.
+      </p>
+
+      <p>
+        <strong>Nested cross-validation for hyperparameter tuning.</strong> If you use cross-validation
+        both for model selection (tuning hyperparameters) and for estimating generalization performance,
+        you need <em>nested</em> cross-validation: an outer loop for performance estimation and an inner
+        loop for hyperparameter selection. Using a single CV loop for both leads to optimistic estimates.
+      </p>
+
+      <p>
+        <strong>Time-series data.</strong> Standard k-fold shuffles data randomly, which violates
+        temporal ordering. For time-series tasks, use <code>TimeSeriesSplit</code> which respects
+        chronological order and only uses past data for training.
+      </p>
+
+      <h2 id="conclusion">Conclusion</h2>
+      <p>
+        Cross-validation is a fundamental tool in the ML practitioner's toolkit. The key takeaways
+        are: use stratified k-fold for classification, be vigilant about data leakage, and use nested
+        CV when tuning hyperparameters. For most practical purposes, 5-fold or 10-fold CV strikes
+        a good balance between computational cost and estimation reliability.
+      </p>
+      <p>
+        In a follow-up post, I'll discuss more advanced topics like repeated cross-validation,
+        leave-one-out CV, and bootstrap-based methods for small datasets.
+      </p>
+
+      <hr style="margin: 2.5rem 0; border: none; border-top: 1px solid var(--border);">
+      <p style="font-size: 0.9rem; color: var(--text-muted);">
+        <em>If you found this helpful, feel free to share it or reach out with questions.
+        You can find me on <a href="https://twitter.com">X/Twitter</a> or drop me an
+        <a href="mailto:dt.young112@gmail.com">email</a>.</em>
+      </p>
+
+    </article>
+
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; 2026 Young (Dung) Truong &middot; Built with care.</p>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>

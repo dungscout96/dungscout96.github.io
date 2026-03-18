@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Publications | Young (Dung) Truong</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+  <!-- ====== Header ====== -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="site-name">Young <span class="accent">Truong</span></a>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html">About</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="publications.html" class="active">Publications</a></li>
+          <li><a href="opensource.html">Open Source</a></li>
+        </ul>
+      </nav>
+      <div class="nav-icons">
+        <a href="https://scholar.google.com/citations?user=PssCV58AAAAJ&hl=en" target="_blank" title="Google Scholar"><i class="fa-brands fa-google-scholar"></i></a>
+        <a href="https://github.com" target="_blank" title="GitHub"><i class="fa-brands fa-github"></i></a>
+        <a href="https://linkedin.com" target="_blank" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+        <a href="https://twitter.com" target="_blank" title="X / Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+        <button class="theme-toggle" onclick="toggleTheme()" title="Toggle dark mode">
+          <i class="fa-solid fa-moon" id="theme-icon"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ====== Main ====== -->
+  <main class="wide">
+
+    <h1 class="section-title" style="font-size:1.8rem; border-bottom:none; margin-bottom:0.5rem;">Publications</h1>
+    <p style="color:var(--text-muted); margin-bottom:1.5rem;">
+      300 citations &middot; h-index: 8 &middot; i10-index: 7 &middot;
+      <a href="https://scholar.google.com/citations?user=PssCV58AAAAJ&hl=en" target="_blank">Google Scholar profile &rarr;</a>
+    </p>
+
+    <!-- Filters -->
+    <div class="pub-filters">
+      <span class="label">Filter:</span>
+      <button class="filter-tag active" data-filter="all" onclick="filterPubs('all', this)">All</button>
+      <button class="filter-tag" data-color="blue" data-filter="deep-learning" onclick="filterPubs('deep-learning', this)">Deep Learning</button>
+      <button class="filter-tag" data-color="green" data-filter="neuroinformatics" onclick="filterPubs('neuroinformatics', this)">Neuroinformatics</button>
+      <button class="filter-tag" data-color="orange" data-filter="eeg" onclick="filterPubs('eeg', this)">EEG</button>
+      <button class="filter-tag" data-color="purple" data-filter="ssl" onclick="filterPubs('ssl', this)">Self-Supervised Learning</button>
+      <button class="filter-tag" data-color="teal" data-filter="open-science" onclick="filterPubs('open-science', this)">Open Science / FAIR</button>
+    </div>
+
+    <!-- ==================== 2026 ==================== -->
+    <div class="pub-year-group">
+      <div class="pub-year">2026</div>
+
+      <div class="pub-card" data-topics="neuroinformatics open-science eeg">
+        <div class="pub-thumb" style="display:flex;align-items:center;justify-content:center;font-size:2.2rem;color:var(--text-muted);background:linear-gradient(135deg, #f5f3f0 0%, #e8e4de 100%);">
+          <i class="fa-solid fa-database"></i>
+        </div>
+        <div class="pub-info">
+          <div class="pub-title">Neuroelectromagnetic Data Archive and Repository: Open-source platform analysis</div>
+          <div class="pub-tags">
+            <span class="pub-tag">Neuroinformatics</span>
+            <span class="pub-tag">Open Science</span>
+          </div>
+          <div class="pub-authors">T Brandmeyer, A Riggs, V Reddi, H Sullivan, C Youn, S Sivagnanam, ...</div>
+          <div class="pub-venue">Aperture Neuro 6 (SI 1), 2026</div>
+          <div class="pub-links">
+            <a href="#" class="pub-link"><i class="fa-solid fa-file-pdf"></i> Paper</a>
+            <a href="#" class="pub-link"><i class="fa-solid fa-quote-right"></i> Cite</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ==================== 2025 ==================== -->
+    <div class="pub-year-group">
+      <div class="pub-year">2025</div>
+
+      <div class="pub-card" data-topics="deep-learning ssl eeg">
+        <div class="pub-thumb" style="display:flex;align-items:center;justify-content:center;font-size:2.2rem;color:var(--text-muted);background:linear-gradient(135deg, #f0f5f3 0%, #dde8e4 100%);">
+          <i class="fa-solid fa-trophy"></i>
+        </div>
+        <div class="pub-info">
+          <div class="pub-title">EEG Foundation Challenge: From Cross-Task to Cross-Subject EEG Decoding</div>
+          <div class="pub-tags">
+            <span class="pub-tag">Deep Learning</span>
+            <span class="pub-tag">Self-Supervised Learning</span>
+            <span class="pub-tag">EEG</span>
+          </div>
+          <div class="pub-authors">B Aristimunha, <span class="self">D Truong</span>, P Guetschel, SY Shirazi, I Guyon, AR Franco, ...</div>
+          <div class="pub-venue">arXiv preprint arXiv:2506.19141, 2025 &middot; Cited by 6</div>
+          <div class="pub-links">
+            <a href="https://arxiv.org/abs/2506.19141" class="pub-link"><i class="fa-solid fa-link"></i> arXiv</a>
+            <a href="#" class="pub-link"><i class="fa-solid fa-quote-right"></i> Cite</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="pub-card" data-topics="deep-learning eeg">
+        <div class="pub-thumb" style="display:flex;align-items:center;justify-content:center;font-size:2.2rem;color:var(--text-muted);background:linear-gradient(135deg, #f3f0f5 0%, #e4dde8 100%);">
+          <i class="fa-solid fa-chart-bar"></i>
+        </div>
+        <div class="pub-info">
+          <div class="pub-title">Data Normalization Strategies for EEG Deep Learning</div>
+          <div class="pub-tags">
+            <span class="pub-tag">Deep Learning</span>
+            <span class="pub-tag">EEG</span>
+          </div>
+          <div class="pub-authors"><span class="self">D Truong</span>, A Delorme</div>
+          <div class="pub-venue">arXiv preprint arXiv:2506.22455, 2025 &middot; Cited by 2</div>
+          <div class="pub-links">
+            <a href="https://arxiv.org/abs/2506.22455" class="pub-link"><i class="fa-solid fa-link"></i> arXiv</a>
+            <a href="#" class="pub-link"><i class="fa-solid fa-quote-right"></i> Cite</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="pub-card" data-topics="deep-learning eeg">
+        <div class="pub-thumb" style="display:flex;align-items:center;justify-content:center;font-size:2.2rem;color:var(--text-muted);background:linear-gradient(135deg, #f5f0f0 0%, #e8dddd 100%);">
+          <i class="fa-solid fa-brain"></i>
+        </div>
+        <div class="pub-info">
+          <div class="pub-title">From Theory to Application: Fine-Tuning Large EEG Model with Real-World Stress Data</div>
+          <div class="pub-tags">
+            <span class="pub-tag">Deep Learning</span>
+            <span class="pub-tag">EEG</span>
+          </div>
+          <div class="pub-authors">S Wang, S Zhang, WL Chen, <span class="self">D Truong</span>, TP Jung</div>
+          <div class="pub-venue">arXiv preprint arXiv:2505.23042, 2025 &middot; Cited by 2</div>
+          <div class="pub-links">
+            <a href="https://arxiv.org/abs/2505.23042" class="pub-link"><i class="fa-solid fa-link"></i> arXiv</a>
+            <a href="#" class="pub-link"><i class="fa-solid fa-quote-right"></i> Cite</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ==================== 2024 ==================== -->
+    <div class="pub-year-group">
+      <div class="pub-year">2024</div>
+
+      <div class="pub-card" data-topics="neuroinformatics open-science eeg">
+        <div class="pub-thumb" style="display:flex;align-items:center;justify-content:center;font-size:2.2rem;color:var(--text-muted);background:linear-gradient(135deg, #f0f5f3 0%, #dde8e4 100%);">
+          <i class="fa-solid fa-database"></i>
+        </div>
+        <div class="pub-info">
+          <div class="pub-title">HBN-EEG: The FAIR implementation of the Healthy Brain Network (HBN) electroencephalography dataset</div>
+          <div class="pub-tags">
+            <span class="pub-tag">Neuroinformatics</span>
+            <span class="pub-tag">Open Science</span>
+            <span class="pub-tag">EEG</span>
+          </div>
+          <div class="pub-authors">SY Shirazi, A Franco, M Scopel Hoffmann, NB Esper, <span class="self">D Truong</span>, ...</div>
+          <div class="pub-venue">bioRxiv, 2024 &middot; Cited by 7</div>
+          <div class="pub-links">
+            <a href="#" class="pub-link"><i class="fa-solid fa-file-pdf"></i> Paper</a>
+            <a href="#" class="pub-link"><i class="fa-solid fa-quote-right"></i> Cite</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="pub-card" data-topics="deep-learning ssl eeg">
+        <div class="pub-thumb" style="display:flex;align-items:center;justify-content:center;font-size:2.2rem;color:var(--text-muted);background:linear-gradient(135deg, #f3f0f5 0%, #e4dde8 100%);">
+          <i class="fa-solid fa-lock-open"></i>
+        </div>
+        <div class="pub-info">
+          <div class="pub-title">EEG-SSL: A Framework for Self-Supervised Learning on EEG</div>
+          <div class="pub-tags">
+            <span class="pub-tag">Deep Learning</span>
+            <span class="pub-tag">Self-Supervised Learning</span>
+            <span class="pub-tag">EEG</span>
+          </div>
+          <div class="pub-authors"><span class="self">D Truong</span>, MA Khalid, A Delorme</div>
+          <div class="pub-venue">2024 IEEE International Conference on Bioinformatics and Biomedicine (BIBM) &middot; Cited by 3</div>
+          <div class="pub-links">
+            <a href="#" class="pub-link"><i class="fa-solid fa-file-pdf"></i> Paper</a>
+            <a href="#" class="pub-link"><i class="fa-solid fa-quote-right"></i> Cite</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="pub-card" data-topics="neuroinformatics eeg">
+        <div class="pub-thumb" style="display:flex;align-items:center;justify-content:center;font-size:2.2rem;color:var(--text-muted);background:linear-gradient(135deg, #f5f3f0 0%, #e8e4de 100%);">
+          <i class="fa-solid fa-tags"></i>
+        </div>
+        <div class="pub-info">
+          <div class="pub-title">Automatic EEG Independent Component Classification Using ICLabel in Python</div>
+          <div class="pub-tags">
+            <span class="pub-tag">Neuroinformatics</span>
+            <span class="pub-tag">EEG</span>
+          </div>
+          <div class="pub-authors">A Delorme, <span class="self">D Truong</span>, L Pion-Tonachini, S Makeig</div>
+          <div class="pub-venue">2024 IEEE International Conference on Bioinformatics and Biomedicine (BIBM) &middot; Cited by 2</div>
+          <div class="pub-links">
+            <a href="#" class="pub-link"><i class="fa-solid fa-file-pdf"></i> Paper</a>
+            <a href="#" class="pub-link"><i class="fa-solid fa-quote-right"></i> Cite</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ==================== 2023 ==================== -->
+    <div class="pub-year-group">
+      <div class="pub-year">2023</div>
+
+      <div class="pub-card" data-topics="deep-learning eeg">
+        <div class="pub-thumb" style="display:flex;align-items:center;justify-content:center;font-size:2.2rem;color:var(--text-muted);background:linear-gradient(135deg, #f5f0f0 0%, #e8dddd 100%);">
+          <i class="fa-solid fa-eye"></i>
+        </div>
+        <div class="pub-info">
+          <div class="pub-title">Deep learning applied to EEG data with different montages using spatial attention</div>
+          <div class="pub-tags">
+            <span class="pub-tag">Deep Learning</span>
+            <span class="pub-tag">EEG</span>
+          </div>
+          <div class="pub-authors"><span class="self">D Truong</span>, MA Khalid, A Delorme</div>
+          <div class="pub-venue">2023 IEEE International Conference on Bioinformatics and Biomedicine (BIBM) &middot; Cited by 5</div>
+          <div class="pub-links">
+            <a href="#" class="pub-link"><i class="fa-solid fa-file-pdf"></i> Paper</a>
+            <a href="#" class="pub-link"><i class="fa-solid fa-quote-right"></i> Cite</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="pub-card" data-topics="neuroinformatics open-science eeg">
+        <div class="pub-thumb" style="display:flex;align-items:center;justify-content:center;font-size:2.2rem;color:var(--text-muted);background:linear-gradient(135deg, #f0f3f5 0%, #dde4e8 100%);">
+          <i class="fa-solid fa-sitemap"></i>
+        </div>
+        <div class="pub-info">
+          <div class="pub-title">Hierarchical Event Descriptor library schema for EEG data annotation</div>
+          <div class="pub-tags">
+            <span class="pub-tag">Neuroinformatics</span>
+            <span class="pub-tag">Open Science</span>
+          </div>
+          <div class="pub-authors">D Hermes, TP Attia, S Beniczky, J Bosch-Bayard, A Delorme, ...</div>
+          <div class="pub-venue">arXiv preprint arXiv:2310.15173, 2023 &middot; Cited by 2</div>
+          <div class="pub-links">
+            <a href="https://arxiv.org/abs/2310.15173" class="pub-link"><i class="fa-solid fa-link"></i> arXiv</a>
+            <a href="#" class="pub-link"><i class="fa-solid fa-quote-right"></i> Cite</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="pub-card" data-topics="neuroinformatics open-science eeg">
+        <div class="pub-thumb" style="display:flex;align-items:center;justify-content:center;font-size:2.2rem;color:var(--text-muted);background:linear-gradient(135deg, #f5f5f0 0%, #e8e8dd 100%);">
+          <i class="fa-solid fa-book"></i>
+        </div>
+        <div class="pub-info">
+          <div class="pub-title">End-to-end processing of M/EEG data with BIDS, HED, and EEGLAB</div>
+          <div class="pub-tags">
+            <span class="pub-tag">Neuroinformatics</span>
+            <span class="pub-tag">Open Science</span>
+            <span class="pub-tag">EEG</span>
+          </div>
+          <div class="pub-authors"><span class="self">D Truong</span>, K Robbins, A Delorme, S Makeig</div>
+          <div class="pub-venue">Methods for Analyzing Large Neuroimaging Datasets (Book Chapter), 2023 &middot; Cited by 2</div>
+          <div class="pub-links">
+            <a href="#" class="pub-link"><i class="fa-solid fa-file-pdf"></i> Paper</a>
+            <a href="#" class="pub-link"><i class="fa-solid fa-quote-right"></i> Cite</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ==================== 2022 ==================== -->
+    <div class="pub-year-group">
+      <div class="pub-year">2022</div>
+
+      <div class="pub-card" data-topics="neuroinformatics open-science eeg">
+        <div class="pub-thumb" style="display:flex;align-items:center;justify-content:center;font-size:2.2rem;color:var(--text-muted);background:linear-gradient(135deg, #f0f5f3 0%, #dde8e4 100%);">
+          <i class="fa-solid fa-cloud"></i>
+        </div>
+        <div class="pub-info">
+          <div class="pub-title">NEMAR: An open access data, tools, and compute resource operating on NeuroElectroMagnetic data</div>
+          <div class="pub-tags">
+            <span class="pub-tag">Neuroinformatics</span>
+            <span class="pub-tag">Open Science</span>
+          </div>
+          <div class="pub-authors">A Delorme, <span class="self">D Truong</span>, C Youn, S Sivagnanam, K Yoshimoto, RA Poldrack, ...</div>
+          <div class="pub-venue">Database 2022, 2022 &middot; Cited by 24</div>
+          <div class="pub-links">
+            <a href="#" class="pub-link"><i class="fa-solid fa-file-pdf"></i> Paper</a>
+            <a href="#" class="pub-link"><i class="fa-solid fa-quote-right"></i> Cite</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="pub-card" data-topics="neuroinformatics open-science">
+        <div class="pub-thumb" style="display:flex;align-items:center;justify-content:center;font-size:2.2rem;color:var(--text-muted);background:linear-gradient(135deg, #f3f5f0 0%, #e4e8dd 100%);">
+          <i class="fa-solid fa-layer-group"></i>
+        </div>
+        <div class="pub-info">
+          <div class="pub-title">Building FAIR functionality: annotating events in time series data using hierarchical event descriptors (HED)</div>
+          <div class="pub-tags">
+            <span class="pub-tag">Neuroinformatics</span>
+            <span class="pub-tag">Open Science</span>
+          </div>
+          <div class="pub-authors">K Robbins, <span class="self">D Truong</span>, A Jones, I Callanan, S Makeig</div>
+          <div class="pub-venue">Neuroinformatics 20 (2), 463-481, 2022 &middot; Cited by 15</div>
+          <div class="pub-links">
+            <a href="#" class="pub-link"><i class="fa-solid fa-file-pdf"></i> Paper</a>
+            <a href="#" class="pub-link"><i class="fa-solid fa-quote-right"></i> Cite</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="pub-card" data-topics="deep-learning eeg">
+        <div class="pub-thumb" style="display:flex;align-items:center;justify-content:center;font-size:2.2rem;color:var(--text-muted);background:linear-gradient(135deg, #f5f3f0 0%, #e8e4de 100%);">
+          <i class="fa-solid fa-stream"></i>
+        </div>
+        <div class="pub-info">
+          <div class="pub-title">A streamable large-scale clinical EEG dataset for Deep Learning</div>
+          <div class="pub-tags">
+            <span class="pub-tag">Deep Learning</span>
+            <span class="pub-tag">EEG</span>
+          </div>
+          <div class="pub-authors"><span class="self">D Truong</span>, M Sinha, KU Venkataraju, M Milham, A Delorme</div>
+          <div class="pub-venue">2022 IEEE Engineering in Medicine and Biology &middot; Cited by 8</div>
+          <div class="pub-links">
+            <a href="#" class="pub-link"><i class="fa-solid fa-file-pdf"></i> Paper</a>
+            <a href="#" class="pub-link"><i class="fa-solid fa-quote-right"></i> Cite</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ==================== 2021 ==================== -->
+    <div class="pub-year-group">
+      <div class="pub-year">2021</div>
+
+      <div class="pub-card" data-topics="neuroinformatics eeg">
+        <div class="pub-thumb" style="display:flex;align-items:center;justify-content:center;font-size:2.2rem;color:var(--text-muted);background:linear-gradient(135deg, #f0f5f3 0%, #dde8e4 100%);">
+          <i class="fa-solid fa-server"></i>
+        </div>
+        <div class="pub-info">
+          <div class="pub-title">The open EEGLAB portal interface: High-performance computing with EEGLAB</div>
+          <div class="pub-tags">
+            <span class="pub-tag">Neuroinformatics</span>
+            <span class="pub-tag">EEG</span>
+          </div>
+          <div class="pub-authors">R Mart&iacute;nez-Cancino, A Delorme, <span class="self">D Truong</span>, F Artoni, K Kreutz-Delgado, ...</div>
+          <div class="pub-venue">NeuroImage 224, 116778, 2021 &middot; Cited by 78</div>
+          <div class="pub-links">
+            <a href="#" class="pub-link"><i class="fa-solid fa-file-pdf"></i> Paper</a>
+            <a href="#" class="pub-link"><i class="fa-solid fa-quote-right"></i> Cite</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="pub-card" data-topics="neuroinformatics open-science eeg">
+        <div class="pub-thumb" style="display:flex;align-items:center;justify-content:center;font-size:2.2rem;color:var(--text-muted);background:linear-gradient(135deg, #f3f0f5 0%, #e4dde8 100%);">
+          <i class="fa-solid fa-arrows-rotate"></i>
+        </div>
+        <div class="pub-info">
+          <div class="pub-title">From BIDS-formatted EEG data to sensor-space group results: a fully reproducible workflow with EEGLAB and LIMO EEG</div>
+          <div class="pub-tags">
+            <span class="pub-tag">Neuroinformatics</span>
+            <span class="pub-tag">Open Science</span>
+            <span class="pub-tag">EEG</span>
+          </div>
+          <div class="pub-authors">CR Pernet, R Martinez-Cancino, <span class="self">D Truong</span>, S Makeig, A Delorme</div>
+          <div class="pub-venue">Frontiers in Neuroscience 14, 610388, 2021 &middot; Cited by 57</div>
+          <div class="pub-links">
+            <a href="#" class="pub-link"><i class="fa-solid fa-file-pdf"></i> Paper</a>
+            <a href="#" class="pub-link"><i class="fa-solid fa-quote-right"></i> Cite</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="pub-card" data-topics="neuroinformatics open-science eeg">
+        <div class="pub-thumb" style="display:flex;align-items:center;justify-content:center;font-size:2.2rem;color:var(--text-muted);background:linear-gradient(135deg, #f5f5f0 0%, #e8e8dd 100%);">
+          <i class="fa-solid fa-tags"></i>
+        </div>
+        <div class="pub-info">
+          <div class="pub-title">Capturing the nature of events and event context using Hierarchical Event Descriptors (HED)</div>
+          <div class="pub-tags">
+            <span class="pub-tag">Neuroinformatics</span>
+            <span class="pub-tag">Open Science</span>
+          </div>
+          <div class="pub-authors">K Robbins, <span class="self">D Truong</span>, S Appelhoff, A Delorme, S Makeig</div>
+          <div class="pub-venue">NeuroImage 245, 118766, 2021 &middot; Cited by 29</div>
+          <div class="pub-links">
+            <a href="#" class="pub-link"><i class="fa-solid fa-file-pdf"></i> Paper</a>
+            <a href="#" class="pub-link"><i class="fa-solid fa-quote-right"></i> Cite</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="pub-card" data-topics="deep-learning eeg">
+        <div class="pub-thumb" style="display:flex;align-items:center;justify-content:center;font-size:2.2rem;color:var(--text-muted);background:linear-gradient(135deg, #f5f0f0 0%, #e8dddd 100%);">
+          <i class="fa-solid fa-brain"></i>
+        </div>
+        <div class="pub-info">
+          <div class="pub-title">Deep Convolutional Neural Network Applied to Electroencephalography: Raw Data vs Spectral Features</div>
+          <div class="pub-tags">
+            <span class="pub-tag">Deep Learning</span>
+            <span class="pub-tag">EEG</span>
+          </div>
+          <div class="pub-authors"><span class="self">D Truong</span>, M Milham, S Makeig, A Delorme</div>
+          <div class="pub-venue">2021 IEEE Engineering in Medicine and Biology &middot; Cited by 25</div>
+          <div class="pub-links">
+            <a href="#" class="pub-link"><i class="fa-solid fa-file-pdf"></i> Paper</a>
+            <a href="#" class="pub-link"><i class="fa-solid fa-quote-right"></i> Cite</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="pub-card" data-topics="neuroinformatics open-science eeg">
+        <div class="pub-thumb" style="display:flex;align-items:center;justify-content:center;font-size:2.2rem;color:var(--text-muted);background:linear-gradient(135deg, #f0f3f5 0%, #dde4e8 100%);">
+          <i class="fa-solid fa-file-import"></i>
+        </div>
+        <div class="pub-info">
+          <div class="pub-title">Tools for Importing and Evaluating BIDS-EEG Formatted Data</div>
+          <div class="pub-tags">
+            <span class="pub-tag">Neuroinformatics</span>
+            <span class="pub-tag">Open Science</span>
+          </div>
+          <div class="pub-authors">A Delorme, <span class="self">D Truong</span>, R Martinez-Cancino, C Pernet, S Sivagnanam, ...</div>
+          <div class="pub-venue">2021 IEEE/EMBS Conference on Neural Engineering (NER) &middot; Cited by 18</div>
+          <div class="pub-links">
+            <a href="#" class="pub-link"><i class="fa-solid fa-file-pdf"></i> Paper</a>
+            <a href="#" class="pub-link"><i class="fa-solid fa-quote-right"></i> Cite</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="pub-card" data-topics="deep-learning eeg">
+        <div class="pub-thumb" style="display:flex;align-items:center;justify-content:center;font-size:2.2rem;color:var(--text-muted);background:linear-gradient(135deg, #f5f3f0 0%, #e8e4de 100%);">
+          <i class="fa-solid fa-magnifying-glass-chart"></i>
+        </div>
+        <div class="pub-info">
+          <div class="pub-title">Assessing learned features of Deep Learning applied to EEG</div>
+          <div class="pub-tags">
+            <span class="pub-tag">Deep Learning</span>
+            <span class="pub-tag">EEG</span>
+          </div>
+          <div class="pub-authors"><span class="self">D Truong</span>, S Makeig, A Delorme</div>
+          <div class="pub-venue">2021 IEEE International Conference on Bioinformatics and Biomedicine (BIBM) &middot; Cited by 6</div>
+          <div class="pub-links">
+            <a href="#" class="pub-link"><i class="fa-solid fa-file-pdf"></i> Paper</a>
+            <a href="#" class="pub-link"><i class="fa-solid fa-quote-right"></i> Cite</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ==================== 2020 ==================== -->
+    <div class="pub-year-group">
+      <div class="pub-year">2020</div>
+
+      <div class="pub-card" data-topics="neuroinformatics open-science">
+        <div class="pub-thumb" style="display:flex;align-items:center;justify-content:center;font-size:2.2rem;color:var(--text-muted);background:linear-gradient(135deg, #f3f5f0 0%, #e4e8dd 100%);">
+          <i class="fa-solid fa-microchip"></i>
+        </div>
+        <div class="pub-info">
+          <div class="pub-title">Neuroscience Gateway enabling large scale modeling and data processing in neuroscience research</div>
+          <div class="pub-tags">
+            <span class="pub-tag">Neuroinformatics</span>
+            <span class="pub-tag">Open Science</span>
+          </div>
+          <div class="pub-authors">S Sivagnanam, K Yoshimoto, T Carnevale, D Nadeau, M Kandes, ...</div>
+          <div class="pub-venue">Practice and Experience in Advanced Research Computing, 510-513, 2020 &middot; Cited by 9</div>
+          <div class="pub-links">
+            <a href="#" class="pub-link"><i class="fa-solid fa-file-pdf"></i> Paper</a>
+            <a href="#" class="pub-link"><i class="fa-solid fa-quote-right"></i> Cite</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; 2026 Young (Dung) Truong &middot; Built with care.</p>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

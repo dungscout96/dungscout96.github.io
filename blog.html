@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog | Young (Dung) Truong</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+  <!-- ====== Header ====== -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="site-name">Young <span class="accent">Truong</span></a>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html">About</a></li>
+          <li><a href="blog.html" class="active">Blog</a></li>
+          <li><a href="publications.html">Publications</a></li>
+          <li><a href="opensource.html">Open Source</a></li>
+        </ul>
+      </nav>
+      <div class="nav-icons">
+        <a href="https://scholar.google.com/citations?user=PssCV58AAAAJ&hl=en" target="_blank" title="Google Scholar"><i class="fa-brands fa-google-scholar"></i></a>
+        <a href="https://github.com" target="_blank" title="GitHub"><i class="fa-brands fa-github"></i></a>
+        <a href="https://linkedin.com" target="_blank" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+        <a href="https://twitter.com" target="_blank" title="X / Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+        <button class="theme-toggle" onclick="toggleTheme()" title="Toggle dark mode">
+          <i class="fa-solid fa-moon" id="theme-icon"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ====== Main ====== -->
+  <main>
+
+    <h1 class="section-title" style="font-size:1.8rem; border-bottom:none; margin-bottom:0.5rem;">Blog</h1>
+    <p style="color:var(--text-muted); margin-bottom:2rem;">
+      Technical notes on EEG, deep learning, and neuroinformatics.
+    </p>
+
+    <ul class="blog-list">
+
+      <!-- Post 1 -->
+      <li class="blog-card">
+        <h2><a href="blog/understanding-cross-validation.html">A Practical Guide to Cross-Validation for Model Selection</a></h2>
+        <div class="blog-meta">
+          <span><i class="fa-regular fa-calendar"></i> March 10, 2026</span>
+          <span><i class="fa-regular fa-clock"></i> 12 min read</span>
+        </div>
+        <p class="excerpt">
+          An in-depth walkthrough of k-fold cross-validation, stratified splitting, and how to avoid
+          common pitfalls when evaluating machine learning models. Includes code examples in Python.
+        </p>
+        <div class="blog-tags">
+          <span class="tag">Machine Learning</span>
+          <span class="tag">Tutorial</span>
+          <span class="tag">Python</span>
+        </div>
+      </li>
+
+      <!-- Post 2 -->
+      <li class="blog-card">
+        <h2><a href="#">Self-Supervised Learning for EEG: Why and How</a></h2>
+        <div class="blog-meta">
+          <span><i class="fa-regular fa-calendar"></i> February 5, 2026</span>
+          <span><i class="fa-regular fa-clock"></i> 15 min read</span>
+        </div>
+        <p class="excerpt">
+          EEG data is abundant but labels are scarce. In this post, I cover why self-supervised pre-training
+          is a promising direction for EEG foundation models, the key design choices in EEG-SSL, and
+          lessons from our recent cross-task decoding challenge.
+        </p>
+        <div class="blog-tags">
+          <span class="tag">Self-Supervised Learning</span>
+          <span class="tag">EEG</span>
+          <span class="tag">Deep Learning</span>
+        </div>
+      </li>
+
+      <!-- Post 3 -->
+      <li class="blog-card">
+        <h2><a href="#">Working with BIDS-EEG: A Practical Getting-Started Guide</a></h2>
+        <div class="blog-meta">
+          <span><i class="fa-regular fa-calendar"></i> December 20, 2025</span>
+          <span><i class="fa-regular fa-clock"></i> 10 min read</span>
+        </div>
+        <p class="excerpt">
+          The Brain Imaging Data Structure (BIDS) standard for EEG brings reproducibility and interoperability
+          to neuroscience. This tutorial walks through converting raw EEG recordings to BIDS format,
+          validating with the BIDS validator, and loading them in EEGLAB and MNE-Python.
+        </p>
+        <div class="blog-tags">
+          <span class="tag">BIDS</span>
+          <span class="tag">EEG</span>
+          <span class="tag">Tutorial</span>
+        </div>
+      </li>
+
+      <!-- Post 4 -->
+      <li class="blog-card">
+        <h2><a href="#">Data Normalization for EEG Deep Learning: What Matters?</a></h2>
+        <div class="blog-meta">
+          <span><i class="fa-regular fa-calendar"></i> October 14, 2025</span>
+          <span><i class="fa-regular fa-clock"></i> 8 min read</span>
+        </div>
+        <p class="excerpt">
+          EEG signals vary wildly across subjects, sessions, and hardware. Proper normalization is critical
+          before feeding data into neural networks. I summarize our findings on the impact of different
+          normalization strategies on deep learning performance.
+        </p>
+        <div class="blog-tags">
+          <span class="tag">Deep Learning</span>
+          <span class="tag">EEG</span>
+          <span class="tag">Research Notes</span>
+        </div>
+      </li>
+
+    </ul>
+
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; 2026 Young (Dung) Truong &middot; Built with care.</p>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Young (Dung) Truong | Research Scientist</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+  <!-- ====== Header ====== -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="site-name">Young <span class="accent">Truong</span></a>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html" class="active">About</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="publications.html">Publications</a></li>
+          <li><a href="opensource.html">Open Source</a></li>
+        </ul>
+      </nav>
+      <div class="nav-icons">
+        <a href="https://scholar.google.com/citations?user=PssCV58AAAAJ&hl=en" target="_blank" title="Google Scholar"><i class="fa-brands fa-google-scholar"></i></a>
+        <a href="https://github.com" target="_blank" title="GitHub"><i class="fa-brands fa-github"></i></a>
+        <a href="https://linkedin.com" target="_blank" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+        <a href="https://twitter.com" target="_blank" title="X / Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+        <button class="theme-toggle" onclick="toggleTheme()" title="Toggle dark mode">
+          <i class="fa-solid fa-moon" id="theme-icon"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ====== Main ====== -->
+  <main>
+
+    <!-- Bio Section -->
+    <section class="about-hero">
+      <img src="https://api.dicebear.com/7.x/initials/svg?seed=YT&backgroundColor=c0392b&textColor=ffffff&fontSize=42"
+           alt="Young (Dung) Truong" class="about-photo">
+      <div class="about-intro">
+        <h1>Young (Dung) Truong</h1>
+        <p class="subtitle">Swartz Center for Computational Neuroscience &middot; Institute for Neural Computation &middot; UCSD</p>
+        <p>
+          I am a researcher at the Swartz Center for Computational Neuroscience (SCCN) at the University of California, San Diego.
+          My research focuses on applying deep learning and machine learning methods to electroencephalography (EEG) data, with the goal of developing scalable, generalizable foundation models for neural signal processing.
+        </p>
+        <p>
+          I co-organized the <a href="https://eeg2025.github.io/"><strong>NeurIPS 2025 EEG Foundation Challenge</strong></a>, a large-scale competition on cross-task and cross-subject EEG decoding accepted to the NeurIPS 2025 Competition Track. Beyond research, I build and maintain open-source neuroscience infrastructure — from web platforms (<a href="https://nemar.org">NEMAR</a>, <a href="https://eegdash.org">EEGDash</a>) to data processing toolkits (<a href="https://eeglab.org">EEGLAB</a>, <a href="https://braindecode.org">Braindecode</a>) — that serve thousands of researchers worldwide.
+        </p>
+        <div class="about-links">
+          <a href="mailto:dt.young112@gmail.com" class="btn btn-primary"><i class="fa-solid fa-envelope"></i> Email</a>
+          <a href="#" class="btn"><i class="fa-solid fa-file-pdf"></i> CV</a>
+          <a href="https://scholar.google.com/citations?user=PssCV58AAAAJ&hl=en" class="btn"><i class="fa-brands fa-google-scholar"></i> Scholar</a>
+          <a href="https://github.com" class="btn"><i class="fa-brands fa-github"></i> GitHub</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Research Interests -->
+    <section class="mt-2">
+      <h2 class="section-title">Research Interests</h2>
+      <p>
+        My work spans several areas including <strong>deep learning for EEG</strong>, <strong>self-supervised representation learning</strong>,
+        <strong>neuroscience research infrastructure</strong>, and <strong>open-source scientific computing</strong>.
+        I am particularly interested in developing EEG foundation models that generalize across tasks, subjects, and datasets,
+        as well as building the open-access platforms and data pipelines that make large-scale neuroscience research accessible and reproducible.
+      </p>
+    </section>
+
+    <!-- News -->
+    <section class="mt-2">
+      <h2 class="section-title">News</h2>
+      <ul class="news-list">
+        <li>
+          <span class="news-date">2025</span>
+          Co-organized the <a href="https://eeg2025.github.io/"><strong>NeurIPS 2025 EEG Foundation Challenge</strong></a> — a competition on cross-task and cross-subject EEG decoding, accepted to the NeurIPS 2025 Competition Track.
+        </li>
+        <li>
+          <span class="news-date">2026</span>
+          New paper published in Aperture Neuro on the NEMAR open-source platform.
+        </li>
+        <li>
+          <span class="news-date">2025</span>
+          Challenge paper: "<a href="https://arxiv.org/abs/2506.19141">EEG Foundation Challenge: From Cross-Task to Cross-Subject EEG Decoding</a>" on arXiv.
+        </li>
+        <li>
+          <span class="news-date">2025</span>
+          New preprint: "<a href="https://arxiv.org/abs/2506.22455">Data Normalization Strategies for EEG Deep Learning</a>" on arXiv.
+        </li>
+        <li>
+          <span class="news-date">2024</span>
+          Presented EEG-SSL and ICLabel Python papers at IEEE BIBM 2024.
+        </li>
+      </ul>
+    </section>
+
+    <!-- Selected Publications Preview -->
+    <section class="mt-2">
+      <h2 class="section-title">Selected Publications</h2>
+
+      <div class="pub-card">
+        <div class="pub-thumb" style="display:flex;align-items:center;justify-content:center;font-size:2rem;color:var(--text-muted);">
+          <i class="fa-solid fa-trophy"></i>
+        </div>
+        <div class="pub-info">
+          <div class="pub-title">EEG Foundation Challenge: From Cross-Task to Cross-Subject EEG Decoding</div>
+          <div class="pub-tags">
+            <span class="pub-tag">NeurIPS 2025 Competition</span>
+            <span class="pub-tag">Deep Learning</span>
+          </div>
+          <div class="pub-authors">B Aristimunha, <span class="self">D Truong</span>, P Guetschel, SY Shirazi, I Guyon, AR Franco, ...</div>
+          <div class="pub-venue">NeurIPS 2025 Competition Track &middot; arXiv preprint, 2025 &middot; Cited by 6</div>
+          <div class="pub-links">
+            <a href="https://eeg2025.github.io/" class="pub-link"><i class="fa-solid fa-globe"></i> Challenge Site</a>
+            <a href="https://arxiv.org/abs/2506.19141" class="pub-link"><i class="fa-solid fa-link"></i> arXiv</a>
+            <a href="#" class="pub-link"><i class="fa-solid fa-quote-right"></i> Cite</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="pub-card">
+        <div class="pub-thumb" style="display:flex;align-items:center;justify-content:center;font-size:2rem;color:var(--text-muted);">
+          <i class="fa-solid fa-server"></i>
+        </div>
+        <div class="pub-info">
+          <div class="pub-title">The open EEGLAB portal interface: High-performance computing with EEGLAB</div>
+          <div class="pub-tags">
+            <span class="pub-tag">Neuroinformatics</span>
+            <span class="pub-tag">Infrastructure</span>
+          </div>
+          <div class="pub-authors">R Mart&iacute;nez-Cancino, A Delorme, <span class="self">D Truong</span>, F Artoni, K Kreutz-Delgado, ...</div>
+          <div class="pub-venue">NeuroImage 224, 116778, 2021 &middot; Cited by 78</div>
+          <div class="pub-links">
+            <a href="#" class="pub-link"><i class="fa-solid fa-file-pdf"></i> Paper</a>
+            <a href="#" class="pub-link"><i class="fa-solid fa-quote-right"></i> Cite</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="pub-card">
+        <div class="pub-thumb" style="display:flex;align-items:center;justify-content:center;font-size:2rem;color:var(--text-muted);">
+          <i class="fa-solid fa-cloud"></i>
+        </div>
+        <div class="pub-info">
+          <div class="pub-title">NEMAR: An open access data, tools, and compute resource operating on NeuroElectroMagnetic data</div>
+          <div class="pub-tags">
+            <span class="pub-tag">Open Science</span>
+            <span class="pub-tag">Infrastructure</span>
+          </div>
+          <div class="pub-authors">A Delorme, <span class="self">D Truong</span>, C Youn, S Sivagnanam, K Yoshimoto, RA Poldrack, ...</div>
+          <div class="pub-venue">Database 2022, 2022 &middot; Cited by 24</div>
+          <div class="pub-links">
+            <a href="https://nemar.org" class="pub-link"><i class="fa-solid fa-globe"></i> NEMAR.org</a>
+            <a href="#" class="pub-link"><i class="fa-solid fa-file-pdf"></i> Paper</a>
+            <a href="#" class="pub-link"><i class="fa-solid fa-quote-right"></i> Cite</a>
+          </div>
+        </div>
+      </div>
+
+      <p style="margin-top:1rem;"><a href="publications.html" style="font-weight:500;">View all publications &rarr;</a></p>
+    </section>
+
+  </main>
+
+  <!-- ====== Footer ====== -->
+  <footer class="site-footer">
+    <p>&copy; 2026 Young (Dung) Truong &middot; Built with care.</p>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
